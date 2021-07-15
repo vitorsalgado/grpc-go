@@ -1,0 +1,28 @@
+syntax = "proto3";
+package proto;
+
+option go_package = "github.com/vitorsalgado/grpc-go/cmd/main/proto";
+
+message HelloRequest {
+    string name = 1;
+    int32 age = 2;
+
+    enum Status {
+        OK = 0;
+        NOK = 1;
+    }
+
+    optional Status status = 3;
+}
+
+message HelloResponse {
+    string message = 1;
+}
+
+message FarewellRequest {
+    string message = 1;
+}
+
+message FarewellResponse {
+    string message = 2;
+}

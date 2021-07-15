@@ -1,0 +1,11 @@
+syntax = "proto3";
+package proto;
+
+import "cmd/main/proto/hello_world_types.proto";
+
+option go_package = "github.com/vitorsalgado/grpc-go/cmd/main/proto";
+
+service HelloWorldService {
+    rpc Greetings (HelloRequest) returns (HelloResponse) { }
+    rpc Farewell (FarewellRequest) returns (FarewellResponse) { }
+}
